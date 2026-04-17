@@ -1,0 +1,129 @@
+.page {
+  min-height: 100vh;
+  padding-top: calc(var(--navbar-height) + 60px);
+  padding-bottom: 80px;
+  background: var(--bg-primary);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.header { text-align: center; }
+
+.title {
+  font-size: clamp(3rem, 6vw, 6rem);
+  letter-spacing: -2px;
+  line-height: 0.9;
+  text-shadow: 0 0 60px var(--red-glow-heavy);
+}
+
+.subtitle {
+  margin-top: 20px;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  color: var(--chrome-silver);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  border-color: var(--amd-red);
+  box-shadow: 0 0 30px var(--red-glow);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted-gray);
+  letter-spacing: 1px;
+}
+
+.gainBadge {
+  background: rgba(0, 255, 135, 0.1);
+  border: 1px solid rgba(0, 255, 135, 0.3);
+  color: var(--success-green);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--electric-white);
+}
+
+.comparison {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted-gray);
+  letter-spacing: 2px;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 36px;
+}
+
+.arrow {
+  color: var(--amd-red);
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.barTrack {
+  height: 4px;
+  background: var(--border-color);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.barAfter {
+  height: 100%;
+  width: 75%;
+  background: linear-gradient(90deg, var(--amd-red), #ff5555);
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,11 @@
+.spec-badge {
+  background: rgba(237, 28, 36, 0.1);
+  border: 1px solid rgba(237, 28, 36, 0.3);
+  color: var(--amd-red);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  display: inline-block;
+  white-space: nowrap;
+}

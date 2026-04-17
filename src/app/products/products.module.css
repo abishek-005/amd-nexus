@@ -1,0 +1,218 @@
+.page {
+  min-height: 100vh;
+  padding-top: calc(var(--navbar-height) + 40px);
+  padding-bottom: 80px;
+  background: radial-gradient(ellipse at top, #1a0505 0%, var(--bg-primary) 60%);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.sidebar {
+  position: sticky;
+  top: calc(var(--navbar-height) + 40px);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.filterTitle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted-gray);
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.filterList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filterBtn {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: var(--chrome-silver);
+  font-family: var(--font-heading);
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filterBtn:hover {
+  color: var(--electric-white);
+  background: rgba(255,255,255,0.04);
+}
+
+.filterBtn.active {
+  color: var(--amd-red);
+  background: rgba(237, 28, 36, 0.1);
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 48px;
+  color: var(--electric-white);
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted-gray);
+  letter-spacing: 1px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+/* 3D chip visual placeholder (CSS art) */
+.chipVisual {
+  position: relative;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #080808;
+}
+
+.chip {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  border: 1.5px solid #3a3a3a;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
+  box-shadow: inset 0 0 20px rgba(237, 28, 36, 0.1);
+}
+
+.productCard:hover .chip {
+  transform: perspective(400px) rotateY(-15deg) rotateX(10deg) scale(1.05);
+  border-color: var(--amd-red);
+  box-shadow: inset 0 0 30px rgba(237, 28, 36, 0.2), 0 0 30px rgba(237, 28, 36, 0.3);
+}
+
+.chipInner {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #C0C0C0, #888);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chipLabel {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: #111;
+}
+
+.chipGlow {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(237, 28, 36, 0.2), transparent 70%);
+  filter: blur(20px);
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.productCard:hover .chipGlow {
+  opacity: 1;
+}
+
+.cardBody {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.productName {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  color: var(--electric-white);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.tagline {
+  font-size: 13px;
+  color: var(--muted-gray);
+  line-height: 1.4;
+}
+
+.specLine {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--chrome-silver);
+  letter-spacing: 0.5px;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.price {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--electric-white);
+}
+
+@media (max-width: 1024px) {
+  .cardGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .inner { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .cardGrid { grid-template-columns: 1fr; }
+}

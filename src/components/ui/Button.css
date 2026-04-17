@@ -1,0 +1,57 @@
+.nexus-btn {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 14px 32px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.nexus-btn-primary {
+  background: var(--amd-red);
+  color: #FFFFFF;
+  border: none;
+  box-shadow: 0 0 20px rgba(237, 28, 36, 0.4);
+}
+
+.nexus-btn-primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 30px rgba(237, 28, 36, 0.6);
+}
+
+.nexus-btn-ghost {
+  background: transparent;
+  border: 1.5px solid var(--amd-red);
+  color: var(--amd-red);
+}
+
+.nexus-btn-ghost:hover {
+  background: rgba(237, 28, 36, 0.1);
+  box-shadow: 0 0 15px rgba(237, 28, 36, 0.2);
+}
+
+.nexus-btn-tertiary {
+  background: transparent;
+  color: var(--amd-red);
+  border: none;
+  padding: 10px 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.nexus-btn-tertiary::before {
+  content: '>';
+  margin-right: 8px;
+  color: var(--amd-red);
+}
+
+.nexus-btn-tertiary:hover {
+  text-shadow: 0 0 10px var(--amd-red);
+}

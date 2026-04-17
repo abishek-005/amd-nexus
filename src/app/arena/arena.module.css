@@ -1,0 +1,226 @@
+.page {
+  min-height: 100vh;
+  padding-top: calc(var(--navbar-height) + 60px);
+  padding-bottom: 80px;
+  background: radial-gradient(ellipse at top, #1a0505, var(--bg-primary) 60%);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.header {
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(3rem, 7vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: -2px;
+  color: var(--electric-white);
+  text-shadow: 0 0 60px var(--red-glow-heavy);
+}
+
+.subtitle {
+  color: var(--chrome-silver);
+  margin-top: 16px;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+/* Selection Row */
+.selectionRow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.selectorCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.selectorLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted-gray);
+  letter-spacing: 2px;
+}
+
+.dropdown {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--electric-white);
+  font-family: var(--font-heading);
+  font-size: 16px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+.dropdown:focus {
+  outline: none;
+  border-color: var(--amd-red);
+  box-shadow: 0 0 0 2px rgba(237, 28, 36, 0.2);
+}
+
+.vsBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid var(--amd-red);
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--amd-red);
+  text-shadow: 0 0 20px var(--amd-red);
+  box-shadow: 0 0 20px var(--red-glow-heavy), inset 0 0 20px var(--red-glow);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 20px var(--red-glow-heavy), inset 0 0 20px var(--red-glow); }
+  50% { box-shadow: 0 0 40px var(--red-glow-heavy), inset 0 0 30px var(--red-glow); }
+}
+
+/* Battle Stats Section */
+.statsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.nameRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.chipName {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--electric-white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.statRow {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.catLabel {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  color: var(--chrome-silver);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.barContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.barWrap {
+  height: 36px;
+  background: #111;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.bar {
+  height: 100%;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  contain: strict;
+  min-width: 40px;
+}
+
+.winBar {
+  background: linear-gradient(90deg, #00FF87, #00CC6A);
+  box-shadow: 0 0 15px rgba(0, 255, 135, 0.4);
+  color: #000;
+}
+
+.loseBar {
+  background: #2A2A2A;
+  color: var(--muted-gray);
+}
+
+.barScore {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* AI Verdict */
+.verdictCard {
+  padding: 32px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.ariaIcon {
+  background: rgba(237, 28, 36, 0.15);
+  border: 1px solid rgba(237, 28, 36, 0.3);
+  color: var(--amd-red);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  letter-spacing: 2px;
+}
+
+.verdictText {
+  font-size: 16px;
+  color: var(--chrome-silver);
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+@media (max-width: 768px) {
+  .selectionRow { grid-template-columns: 1fr; text-align: center; }
+  .vsBadge { margin: 8px 0; }
+  .statRow { grid-template-columns: 1fr; }
+  .barContainer { grid-template-columns: 1fr; }
+}
