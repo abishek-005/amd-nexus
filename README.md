@@ -32,8 +32,8 @@ Make sure you have Node.js (v18.x or later) installed.
 
 1. **Clone the repository:**
 ```bash
-   git clone [https://github.com/YOUR_USERNAME/amd-nexus-ecommerce.git](https://github.com/YOUR_USERNAME/amd-nexus-ecommerce.git)
-   cd amd-nexus-ecommerce
+   git clone [https://github.com/YOUR_USERNAME/amd-nexus.git](https://github.com/YOUR_USERNAME/amd-nexus.git)
+   cd amd-nexus
 ```
 
 2. **Install project dependencies:**
